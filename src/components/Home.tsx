@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const Home = () => {
-    const [name, setName] = useState(null);
+    const [names, setNames] = useState(null);
 
     return (
         <div>
