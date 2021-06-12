@@ -24,6 +24,11 @@ const Content = styled.div`
   text-align: center;
 `;
 
+const Logo = styled.p`
+  font-size: 60px;
+  margin: 0.3em;
+`;
+
 const Title = styled.p`
   font-size: 40px;
 `;
@@ -58,8 +63,8 @@ const Home: FunctionComponent = () => {
   return (
     <Wrapper>
       <Content>
-        {/*TODO : 사이트 로고 이미지 추가*/}
-        <Title>📈 주식 정보를 한눈에!</Title>
+        <Logo>📈</Logo>
+        <Title>주식 정보를 한눈에!</Title>
         <SubTitle>코스피, 코스닥 관련 정보를 모두 확인해 보세요</SubTitle>
         <EntryButton onClick={onClick}>입장하기</EntryButton>
       </Content>
