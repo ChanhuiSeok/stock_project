@@ -1,5 +1,10 @@
-import {FunctionComponent, MouseEventHandler} from 'react';
+import {FunctionComponent} from 'react';
 import styled from 'styled-components';
+
+interface Props {
+  theme: string;
+  toggleTheme: () => void;
+}
 
 const Button = styled.button`
   background: ${({theme}) => theme.background};
@@ -10,11 +15,6 @@ const Button = styled.button`
   font-size: 0.8rem;
   padding: 0.6rem;
 `;
-
-interface Props {
-  theme: string;
-  toggleTheme: MouseEventHandler<HTMLButtonElement>;
-}
 
 export const Toggler: FunctionComponent<Props> = (props) => {
   const {theme, toggleTheme} = props;

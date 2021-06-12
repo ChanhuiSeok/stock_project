@@ -1,9 +1,10 @@
 import {createGlobalStyle} from 'styled-components';
+import reset from 'styled-reset';
 
 export const GlobalStyles = createGlobalStyle`
+ ${reset}
  body {
-    background: ${({theme}) => theme.body};
-    color: ${({theme}) => theme.text};
-    font-family: Noto Sans KR, Roboto, sans-serif;
-  }
+    font-family: Noto Sans KR, sans-serif;
+    transition: background-color 0.20s linear;
+ }
 `;
