@@ -6,7 +6,7 @@ interface Props {
   toggleTheme: () => void;
 }
 
-const Button = styled.button`
+const ThemeButton = styled.button`
   background: ${({theme}) => theme.background};
   border: 2px solid ${({theme}) => theme.toggleBorder};
   color: ${({theme}) => theme.text};
@@ -18,7 +18,7 @@ const Button = styled.button`
 
 export const Toggler: FunctionComponent<Props> = (props) => {
   const {theme, toggleTheme} = props;
-  return <Button onClick={toggleTheme}>Switch Theme</Button>;
+  return <ThemeButton onClick={toggleTheme}>Switch Theme</ThemeButton>;
 };
 
 export default Toggler;

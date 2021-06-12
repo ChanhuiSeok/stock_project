@@ -1,6 +1,70 @@
+import {FunctionComponent} from 'react';
+import {useHistory} from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadein 0.5s;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+const Content = styled.div`
+  padding: 3rem;
+  font-weight: 600;
+  text-align: center;
+`;
+
+const Title = styled.p`
+  font-size: 40px;
+`;
+
+const SubTitle = styled.p`
+  margin-top: 1rem;
+  font-size: 20px;
+  color: gray;
+`;
+
+const EntryButton = styled.button`
+  background-color: #1479cd;
+  color: white;
+  border-radius: 10px;
+  border: 0;
+  padding: 0.5em;
+  font-size: 20px;
+  margin: 2em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #103985;
+    transition: all ease 0.4s 0s;
+  }
+`;
+
 /** 처음 진입하는 홈페이지 */
-const Home = () => {
-  return <div>테스트입니다.</div>;
+const Home: FunctionComponent = () => {
+  const history = useHistory();
+  const onClick = () => history.push('/stock');
+
+  return (
+    <Wrapper>
+      <Content>
+        {/*TODO : 사이트 로고 이미지 추가*/}
+        <Title>📈 주식 정보를 한눈에!</Title>
+        <SubTitle>코스피, 코스닥 관련 정보를 모두 확인해 보세요</SubTitle>
+        <EntryButton onClick={onClick}>입장하기</EntryButton>
+      </Content>
+    </Wrapper>
+  );
 };
 
 export default Home;
