@@ -35,5 +35,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "eslint": "^7.28.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0"
+  },
+  "lint-staged": {
+    "{src}/**/*.{js,ts,tsx}": [
+      "eslint . --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --no-stash"
+    }
   }
 }
