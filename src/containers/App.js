@@ -1,5 +1,6 @@
-import {Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {createGlobalStyle} from 'styled-components';
+import Home from './Home';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -8,12 +9,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Apps = () => (
+const App = () => (
   <>
     <GlobalStyles />
     <Router>
       <Route exact path="/" component={Home} />
-      <Route exact path="/stock" component={Stock} />
     </Router>
   </>
 );
