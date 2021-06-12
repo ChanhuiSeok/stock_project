@@ -1,4 +1,6 @@
 import {FunctionComponent} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 interface Props {
@@ -7,18 +9,25 @@ interface Props {
 }
 
 const ThemeButton = styled.button`
-  background: ${({theme}) => theme.background};
-  border: 2px solid ${({theme}) => theme.toggleBorder};
+  background-color: transparent;
   color: ${({theme}) => theme.text};
-  border-radius: 30px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.6rem;
 `;
 
 export const Toggler: FunctionComponent<Props> = (props) => {
   const {theme, toggleTheme} = props;
-  return <ThemeButton onClick={toggleTheme}>Switch Theme</ThemeButton>;
+  return (
+    <ThemeButton onClick={toggleTheme}>
+      {theme === 'light' ? (
+        <FontAwesomeIcon icon={faSun} />
+      ) : (
+        <FontAwesomeIcon icon={faMoon} />
+      )}
+    </ThemeButton>
+  );
 };
 
 export default Toggler;

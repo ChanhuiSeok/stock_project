@@ -14,4 +14,7 @@ export const GlobalStyles = createGlobalStyle`
  a:hover{
    color:rgb(15, 76, 155);
  }
+ button{
+    border: 0;
+ }
 `;
