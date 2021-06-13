@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 import {BlockBox} from '../common/styles/elements';
 import StockRank from './StockRank';
-import styled from 'styled-components';
+import Loading from './Loading';
 
 const Wrapper = styled(BlockBox)`
   width: 95%;
@@ -15,6 +16,7 @@ const StockContent = () => {
   return (
     <Wrapper>
       <StockRank />
+      <Loading />
     </Wrapper>
   );
 };
