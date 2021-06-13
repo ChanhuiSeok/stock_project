@@ -54,7 +54,7 @@ const EntryButton = styled(Button)`
 /** 처음 진입하는 홈페이지 */
 const Home: FunctionComponent = () => {
   const history = useHistory();
-  const onClick = () => history.push('/stock');
+  const onClick = () => history.push('/main');
 
   return (
     <Wrapper>
