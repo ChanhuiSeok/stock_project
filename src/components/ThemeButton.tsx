@@ -8,7 +8,7 @@ interface Props {
   toggleTheme: () => void;
 }
 
-const ThemeButton = styled.button`
+const Button = styled.button`
   background-color: transparent;
   color: ${({theme}) => theme.text};
   border-radius: 10px;
@@ -17,17 +17,17 @@ const ThemeButton = styled.button`
   padding: 0.6rem;
 `;
 
-export const Toggler: FunctionComponent<Props> = (props) => {
+export const ThemeButton: FunctionComponent<Props> = (props) => {
   const {theme, toggleTheme} = props;
   return (
-    <ThemeButton onClick={toggleTheme}>
+    <Button onClick={toggleTheme}>
       {theme === 'light' ? (
         <FontAwesomeIcon icon={faSun} />
       ) : (
         <FontAwesomeIcon icon={faMoon} />
       )}
-    </ThemeButton>
+    </Button>
   );
 };
 
-export default Toggler;
+export default ThemeButton;

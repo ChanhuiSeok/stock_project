@@ -1,7 +1,9 @@
-import Toggler from '../components/Toggler';
+import ThemeButton from '../components/ThemeButton';
 import {BackgroundStyles} from '../common/styles/backgroundStyles';
 import {lightTheme, darkTheme} from '../common/styles/themes';
 import {useDarkMode} from '../components/hooks/useDarkMode';
+import StockHeader from '../components/StockHeader';
+import StockContent from '../components/StockContent';
 import {ThemeProvider} from 'styled-components';
 
 const Stock = () => {
@@ -11,12 +13,11 @@ const Stock = () => {
   return (
     <>
       <ThemeProvider theme={themeMode}>
-        <Toggler theme={theme} toggleTheme={themeToggler} />
+        <ThemeButton theme={theme} toggleTheme={themeToggler} />
         <BackgroundStyles />
 
-        <div>
-          <p>테스트 페이지(stock)</p>
-        </div>
+        <StockHeader />
+        <StockContent />
       </ThemeProvider>
     </>
   );

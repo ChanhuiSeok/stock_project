@@ -1,11 +1,9 @@
 import {FunctionComponent} from 'react';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
+import {Button, FlexBox} from '../common/styles/elements';
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Wrapper = styled(FlexBox)`
   min-height: 100vh;
   animation: fadein 0.5s;
   @keyframes fadein {
@@ -39,18 +37,16 @@ const SubTitle = styled.p`
   color: gray;
 `;
 
-const EntryButton = styled.button`
-  background-color: #1479cd;
+const EntryButton = styled(Button)`
+  background: #1479cd;
   color: white;
   border-radius: 10px;
-  border: 0;
   padding: 0.5em;
   font-size: 20px;
   margin: 2em;
-  cursor: pointer;
 
   &:hover {
-    background-color: #103985;
+    background: #103985;
     transition: all ease 0.4s 0s;
   }
 `;
