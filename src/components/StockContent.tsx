@@ -1,7 +1,22 @@
 import React from 'react';
+import {BlockBox} from '../common/styles/elements';
+import StockRank from './StockRank';
+import styled from 'styled-components';
+
+const Wrapper = styled(BlockBox)`
+  width: 95%;
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+`;
 
 const StockContent = () => {
-  return <p>테스트 페이지(stock)</p>;
+  return (
+    <Wrapper>
+      <StockRank />
+    </Wrapper>
+  );
 };
 
 export default StockContent;

@@ -1,4 +1,4 @@
-import {FunctionComponent, MouseEventHandler, useState} from 'react';
+import {FunctionComponent, MouseEventHandler} from 'react';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 import ThemeButton from '../components/ThemeButton';
@@ -9,7 +9,6 @@ import {useDarkMode} from '../components/hooks/useDarkMode';
 import {BlockBox, InlineBlockBox} from '../common/styles/elements';
 import {MenuProps} from './props/MenuProps';
 import {ThemeProvider} from 'styled-components';
-import {isNullishCoalesce} from 'typescript';
 
 const Header = styled(BlockBox)`
   z-index: 1000;
@@ -23,21 +22,22 @@ const Header = styled(BlockBox)`
 
 const TabWrapper = styled.ul`
   display: inline-block;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
+  margin-left: 15px;
 `;
 
 const List = styled.li<MenuProps>`
   display: inline-block;
   margin-right: 15px;
   cursor: pointer;
-  transition: all ease 0.2s;
+  transition: all ease 0.25s;
   color: ${(props) => (props.selected ? '#c74d90' : '#a5a5a5')};
   border-bottom: ${(props) => (props.selected ? '4px solid #c74d90' : 'none')};
 
   &:hover {
     color: #c74d90;
-    transition: all ease 0.2s;
+    transition: all ease 0.25s;
   }
 `;
 
@@ -47,7 +47,7 @@ interface Props {
 }
 
 const StockHeader: FunctionComponent<Props> = (props) => {
-  const {main, detail} = props || {};
+  const {main, detail} = props;
   const {theme, themeToggler} = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
