@@ -12,7 +12,7 @@ import {ThemeProvider} from 'styled-components';
 
 const Header = styled(BlockBox)`
   z-index: 1000;
-  width: 100%;
+  width: 95%;
   max-width: 1024px;
   height: 70px;
   line-height: 70px;
@@ -24,7 +24,6 @@ const TabWrapper = styled.ul`
   display: inline-block;
   font-size: 30px;
   font-weight: 700;
-  margin-left: 15px;
 `;
 
 const List = styled.li<MenuProps>`
@@ -44,40 +43,40 @@ const List = styled.li<MenuProps>`
 interface Props {
   main?: boolean;
   detail?: boolean;
+  theme: string;
+  themeToggler: () => void;
 }
 
 const StockHeader: FunctionComponent<Props> = (props) => {
-  const {main, detail} = props;
-  const {theme, themeToggler} = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const {main, detail, theme, themeToggler} = props;
 
   const history = useHistory();
   const onClick: MouseEventHandler<HTMLLIElement> = (e) => {
     const targets = e.currentTarget.getAttribute('name');
-    history.push('/' + targets);
+    if (targets) {
+      history.push('/' + targets);
+    }
   };
 
   return (
-    <ThemeProvider theme={themeMode}>
-      <Header>
-        <InlineBlockBox>
-          <TabWrapper>
-            <List name="" onClick={onClick}>
-              📈
-            </List>
-            <List name="main" selected={main} onClick={onClick}>
-              주식종합
-            </List>
-            <List name="detail" selected={detail} onClick={onClick}>
-              상세정보
-            </List>
-          </TabWrapper>
-        </InlineBlockBox>
-        <ThemeButton theme={theme} toggleTheme={themeToggler} float={'right'} />
-        <BackButton float={'right'} />
-        <BackgroundStyles />
-      </Header>
-    </ThemeProvider>
+    <Header>
+      <InlineBlockBox>
+        <TabWrapper>
+          <List name="" onClick={onClick}>
+            📈
+          </List>
+          <List name="main" selected={main} onClick={onClick}>
+            주식종합
+          </List>
+          <List name="detail" selected={detail} onClick={onClick}>
+            상세정보
+          </List>
+        </TabWrapper>
+      </InlineBlockBox>
+      <ThemeButton theme={theme} toggleTheme={themeToggler} float={'right'} />
+      <BackButton float={'right'} />
+      <BackgroundStyles />
+    </Header>
   );
 };
 

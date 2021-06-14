@@ -9,7 +9,7 @@ export const HeaderButton = styled(Button)`
   background-color: transparent;
   padding: 0.4rem;
   margin-top: 20px;
-  margin-right: 15px;
+  margin-right: 10px;
   &:hover {
     border-bottom: 3px solid rgba(194, 194, 194, 0.4);
   }

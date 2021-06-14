@@ -5,5 +5,7 @@ declare module 'styled-components' {
     body: string;
     text: string;
     float?: string;
+    box?: string;
+    borders?: string;
   }
 }
